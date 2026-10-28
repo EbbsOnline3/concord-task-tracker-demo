@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Task Tracker</h1>
+      </header>
+
+      <section aria-labelledby="add-task-heading">
+        <h2 id="add-task-heading">Add a task</h2>
+        <form id="task-form">
+          <label for="task-input">Task name</label>
+          <input
+            id="task-input"
+            name="task"
+            type="text"
+            maxlength="200"
+            autocomplete="off"
+            placeholder="What needs to be done?"
+            required
+          >
+          <button type="submit">Add Task</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="tasks-heading">
+        <h2 id="tasks-heading">Your tasks</h2>
+
+        <fieldset id="filter-controls">
+          <legend>Filter tasks</legend>
+          <label>
+            <input type="radio" name="task-filter" value="all" checked>
+            All
+          </label>
+          <label>
+            <input type="radio" name="task-filter" value="active">
+            Active
+          </label>
+          <label>
+            <input type="radio" name="task-filter" value="completed">
+            Completed
+          </label>
+        </fieldset>
+
+        <p id="empty-state" role="status">No tasks yet. Add a task to get started.</p>
+        <ul id="task-list" aria-label="Tasks"></ul>
+      </section>
+    </main>
+  </body>
+</html>
